@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Dropdown for selecting the language -->
   <select id="languageSelect">
     <option value="EN">English</option>
     <option value="NO">Norsk</option>
   </select>
 
+  <!-- Container for the refresh icon and text -->
   <span id="refreshContainer" style="cursor: pointer; margin-left: 20px; display: none;">
+    <!-- Refresh icon -->
     <i class="fas fa-sync-alt"></i>
+    <!-- Refresh text -->
     <span id="refreshText" style="margin-left: 5px;">Refresh</span>
-</span>
+  </span>
 
   <title>Summarizer</title>
+  <!-- Link to the external CSS file -->
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Link to the Font Awesome CSS file for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
 </head>
 <body>
   <div class="container">
+    <!-- Button to trigger the summarization -->
     <button id="summarize" class="summarize-button">Summarize</button>
+    <!-- Container for displaying the summary -->
     <div id="summaryText" class="summary-box"></div>
+    <!-- Button to copy the summary to the clipboard -->
     <button id="copyToClipboard" class="action-button">Copy to Clipboard</button>
+    <!-- Button to download the summary as a text file -->
     <button id="downloadWord" class="action-button">Download as Text-file</button>
   </div>
+  <!-- Link to the external JavaScript file -->
   <script src="popup.js"></script>
-  
 </body>
 </html>

@@ -5,8 +5,8 @@ import openai
 app = Flask(__name__)
 
 # Set secret key and OpenAI API key from the configuration
-app.secret_key = 'Add your secret key here'
-openai.api_key = 'Add your OpenAI API key here'
+app.secret_key = 'Add_your_secret_key_here'
+openai.api_key = 'Add_your_OpenAI_API_key_here'
 
 # Define route for summarization
 @app.route('/summarize', methods=['POST'])
@@ -24,14 +24,14 @@ def summarize():
         'no': "Vennligst oppsummer følgende tekst:"
     }
     # Get the prompt based on the provided language
-    prompt = prompt_map.get(selected_language, "Please summarize the following text:")
+    prompt = prompt_map.get(selected_language, "Please summarize the following text:") # Default to English if not provided
 
     # Map languages to their respective truncation messages
     truncation_message_map = {
         'en': "\n\nThis summary is based on a truncated text. Please upgrade to a premium subscription for complete text summaries.",
         'no': "\n\nDenne oppsummeringen er basert på en forkortet tekst. Vennligst oppgrader til premium abonnement for komplette tekstsammendrag."
     }
-    # Get the truncation message based on the detected language
+    # Get the truncation message based on the detected language         # Default to English if not provided
     truncation_message = truncation_message_map.get(selected_language, "\n\nThis summary is based on a truncated text. Please upgrade to a premium subscription for complete text summaries.")
 
     # Initialize messages for the OpenAI API
@@ -45,7 +45,7 @@ def summarize():
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=messages,
-            max_tokens=800
+            max_tokens=800 # This can be fintuned depending on GPT model.
         )
         # Extract the summary from the response
         summary = response['choices'][0]['message']['content'].strip()
@@ -53,7 +53,7 @@ def summarize():
         # If token limit is exceeded, truncate the text
         if "tokens" in str(e):
             # Truncate the text to fit within the token limit
-            truncated_text = text[:1000]  # You might need to adjust this
+            truncated_text = text[:1000]  # Truncate to 1000 characters. This can be fintuned depending on GPT model.
             # Update the user message with the truncated text
             messages[-1]["content"] = f"{prompt}\n{truncated_text}"
 
@@ -62,7 +62,7 @@ def summarize():
                 response = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=messages,
-                    max_tokens=800
+                    max_tokens=800 # This can be fintuned depending on GPT model.
                 )
                 # Extract the summary from the response
                 summary = response['choices'][0]['message']['content'].strip()

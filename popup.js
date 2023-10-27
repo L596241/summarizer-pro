@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('refreshContainer').style.display = "none";
     }
     
-
+    // Function to update the UI based on the selected language
     function updateUIForLanguage(language) {
         const uiTextMap = {
             'EN': {
