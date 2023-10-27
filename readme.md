@@ -18,7 +18,7 @@ This repository contains a Chrome extension that uses a Flask backend powered by
    cd summarizer-pro
    ```
 
-2. **Create a Virtual Environment (Optional but Recommended):**
+2. **Create a Virtual Environment (Optional, but Recommended):**
    ```bash
    python -m venv myenv
    source myenv/bin/activate  # On Windows use: myenv\Scripts\activate
