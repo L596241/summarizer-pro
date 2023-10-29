@@ -61,4 +61,3 @@ https://www.youtube.com/watch?v=RXu8Vl4N6J4
 
 - OpenAI for the GPT-3.5-turbo model.
 - Flask for providing the web framework.
-```
