@@ -2,6 +2,9 @@
 
 This repository contains a Chrome extension that uses a Flask backend powered by OpenAI's GPT-3.5-turbo model to summarize web page content.
 
+## Video demonstration:
+https://www.youtube.com/watch?v=RXu8Vl4N6J4
+
 ## Installation & Setup
 
 ### 1. Setting up the Flask Application
